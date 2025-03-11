@@ -1,0 +1,385 @@
+/* Modern CSS for Student Results */
+:root {
+  --primary-color: #4361ee;
+  --primary-light: #eef2ff;
+  --primary-dark: #3a56d4;
+  --accent-color: #7209b7;
+  --success-color: #06d6a0;
+  --warning-color: #ffd166;
+  --danger-color: #ef476f;
+  --text-dark: #2b2d42;
+  --text-light: #8d99ae;
+  --background: #f8f9fa;
+  --card-background: #ffffff;
+  --border-radius: 12px;
+  --box-shadow: 0 10px 20px rgba(67, 97, 238, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Main container styling */
+.results-container {
+  padding: 32px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--background);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Card styling with elegant shadow and border radius */
+.results-card {
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--box-shadow) !important;
+  border: none !important;
+  overflow: hidden;
+  background-color: var(--card-background) !important;
+  padding: 0 !important;
+}
+
+.results-card .p-card-body {
+  padding: 32px;
+}
+
+/* Header section with gradient background */
+.header-section {
+  text-align: center;
+  margin-bottom: 36px;
+  padding: 32px 24px 24px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.08)"/></svg>');
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.main-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  position: relative;
+}
+
+/* Search section styling with floating effect */
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  margin-top: -20px;
+}
+
+.student-id-input {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 50px !important;
+  padding: 12px 24px !important;
+  font-size: 16px !important;
+  transition: var(--transition) !important;
+  border: 2px solid #eaeaea !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.student-id-input:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2) !important;
+}
+
+.student-id-input::placeholder {
+  color: var(--text-light);
+}
+
+.search-button {
+  width: 100%;
+  max-width: 400px;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-dark)) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 12px 24px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition) !important;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2) !important;
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(67, 97, 238, 0.25) !important;
+  background: linear-gradient(to right, var(--primary-dark), var(--accent-color)) !important;
+}
+
+.search-button .p-button-icon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+/* Loading container with smooth animation */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.loading-container .p-progress-spinner circle {
+  stroke: var(--primary-color) !important;
+}
+
+/* Error message styling with attention-grabbing design */
+.error-message {
+  padding: 16px 20px;
+  background-color: #fff5f7;
+  color: var(--danger-color);
+  border-left: 4px solid var(--danger-color);
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(239, 71, 111, 0.1);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-message::before {
+  content: "⚠️";
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* Results section styling */
+.results-section {
+  margin-top: 32px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Summary card styling with gradient accent */
+.summary-card {
+  margin-bottom: 28px;
+  border-radius: 12px !important;
+  background: white !important;
+  border-left: 5px solid var(--primary-color) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+.summary-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 12px;
+}
+
+.summary-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.gpa-display {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  padding: 8px 16px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.gpa-display::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+/* Table header styling */
+.table-header {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  padding: 16px 0;
+  position: relative;
+  display: inline-block;
+}
+
+.table-header::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+/* Badge styling with 3D effect */
+.grade-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(67, 97, 238, 0.2);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-pass {
+  background: var(--success-color);
+  color: white;
+}
+
+.status-fail {
+  background: var(--danger-color);
+  color: white;
+}
+
+/* PrimeReact DataTable elegant customizations */
+.results-table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.results-table .p-datatable-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.results-table .p-datatable-thead > tr > th {
+  background: #f7f9fc;
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 16px;
+  border-bottom: 2px solid #edf2f7;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.results-table .p-datatable-tbody > tr > td {
+  padding: 16px;
+  border-bottom: 1px solid #edf2f7;
+  color: var(--text-dark);
+  font-size: 15px;
+}
+
+.results-table .p-datatable-tbody > tr:nth-child(even) {
+  background-color: #f8faff;
+}
+
+.results-table .p-datatable-tbody > tr:hover {
+  background-color: #eef2ff;
+  transform: translateY(-2px);
+  transition: var(--transition);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.results-table .p-paginator {
+  padding: 16px;
+  background: #f7f9fc;
+  border-top: 1px solid #edf2f7;
+}
+
+.results-table .p-paginator .p-paginator-element {
+  border-radius: 8px;
+  margin: 0 2px;
+}
+
+.results-table .p-paginator .p-highlight {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .search-section {
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .student-id-input, .search-button {
+    width: auto;
+    max-width: initial;
+  }
+  
+  .student-id-input {
+    width: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .results-card .p-card-body {
+    padding: 24px 16px;
+  }
+  
+  .header-section {
+    padding: 24px 16px 20px;
+  }
+  
+  .main-title {
+    font-size: 24px;
+  }
+  
+  .summary-content {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .results-table .p-datatable-thead > tr > th,
+  .results-table .p-datatable-tbody > tr > td {
+    padding: 12px 8px;
+  }
+}
+
+/* Add font import in your index.html or App.css */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */

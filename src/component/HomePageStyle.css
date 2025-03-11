@@ -1,0 +1,213 @@
+/* Global Styles */
+:root {
+    --primary-color: #0066FF;  /* Electric Blue */
+    --secondary-color: #00D4FF;  /* Bright Cyan */
+    --accent-color: #FFAA00;  /* High-Energy Yellow */
+    --background-color: #FFFFFF;  /* Crisp White */
+    --text-color: #111111;  /* Deep Black */
+    --error-color: #FF3030;  /* Vivid Red */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Homepage */
+.homepage {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.brand-section, .form-section {
+    background-color: rgba(0, 102, 255, 0.08);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(0, 102, 255, 0.3);
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-icon {
+    width: 45px;
+    height: 45px;
+    color: var(--primary-color);
+}
+
+.brand-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.brand-description {
+    font-size: 1.2rem;
+    color: rgba(17, 17, 17, 0.7);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: rgba(0, 102, 255, 0.1);
+    border-radius: 18px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border: 2px solid var(--primary-color);
+    background-color: rgba(0, 102, 255, 0.15);
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+}
+
+.feature-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.feature-description {
+    color: rgba(17, 17, 17, 0.7);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+p {
+    color: rgba(17, 17, 17, 0.7);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    background-color: rgba(0, 102, 255, 0.08);
+    border: 1px solid rgba(0, 102, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 102, 255, 0.3);
+}
+
+.input.error {
+    border-color: var(--error-color);
+    color: var(--error-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #004CBA;
+    transform: scale(1.07);
+    box-shadow: 0 5px 16px rgba(0, 102, 255, 0.5);
+}
+
+.button-text {
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.chevron {
+    transition: transform 0.3s ease;
+}
+
+.chevron.hovered {
+    transform: translateX(5px);
+}
+
+.toggle-signup-signin {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.toggle-btn {
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.toggle-btn:hover {
+    color: #004CBA;
+}
